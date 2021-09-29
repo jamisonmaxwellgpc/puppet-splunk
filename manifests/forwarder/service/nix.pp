@@ -19,7 +19,7 @@ class splunk::forwarder::service::nix inherits splunk::forwarder::service {
       notify  => Exec['enable_splunkforwarder'],
     }
     if $splunk::params::supports_systemd and $splunk::forwarder::splunk_user == 'root' {
-      $user_args = ''
+      $user_args = '-user root -group root'
     } else {
       $user_args = "-user ${splunk::forwarder::splunk_user}"
     }
