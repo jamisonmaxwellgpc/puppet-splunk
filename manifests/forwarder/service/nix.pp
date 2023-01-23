@@ -82,7 +82,7 @@ class splunk::forwarder::service::nix inherits splunk::forwarder::service {
     $accept_tos_subscribe = undef
   }
   $accept_tos_command = [
-    "${splunk::forwarder::forwarder_homedir}/bin/splunk stop &&",
+    "${splunk::forwarder::forwarder_homedir}/bin/splunk stop -f &&",
     "${splunk::forwarder::forwarder_homedir}/bin/splunk start --accept-license --answer-yes &&",
     "${splunk::forwarder::forwarder_homedir}/bin/splunk stop",
   ]
